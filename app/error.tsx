@@ -1,0 +1,4 @@
+"use client";
+import { useEffect } from "react";
+import { Button } from "@/components/ui/button";
+export default function Error({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) { useEffect(() => { console.error("BhashaClass route error", error.digest); }, [error]); return <main className="grid min-h-screen place-items-center bg-canvas p-6"><div className="card max-w-md p-8 text-center"><p className="eyebrow">Something went wrong</p><h1 className="mt-3 font-display text-3xl text-primary">We could not load this page.</h1><p className="mt-3 text-sm text-slate-600">Your saved work is not affected. Try again, or return to your workspace.</p><div className="mt-6 flex justify-center gap-3"><Button onClick={() => reset()}>Try again</Button><a href="/dashboard"><Button variant="secondary">Dashboard</Button></a></div></div></main>; }

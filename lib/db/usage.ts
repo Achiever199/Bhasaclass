@@ -1,0 +1,2 @@
+import { db } from "@/lib/db/prisma";
+export async function recordUsage(resourceId: string, action: "viewed" | "duplicated" | "downloaded", userId?: string) { if (userId && action === "viewed") { const since = new Date(Date.now() - 10 * 60 * 1000); const recent = await db.resourceUsage.findFirst({ where: { resourceId, userId, action, createdAt: { gte: since } }, select: { id: true } }); if (recent) return false; } await db.resourceUsage.create({ data: { resourceId, userId, action } }); return true; }

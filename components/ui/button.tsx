@@ -1,0 +1,3 @@
+import { cn } from "@/lib/utils";
+import type { ButtonHTMLAttributes } from "react";
+export function Button({ className, variant = "primary", ...props }: ButtonHTMLAttributes<HTMLButtonElement> & { variant?: "primary" | "secondary" | "ghost" | "ai" }) { return <button className={cn("rounded-full px-4 py-2.5 text-sm font-semibold transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-50", variant === "primary" && "bg-primary text-white hover:bg-ink", variant === "secondary" && "border bg-white text-primary hover:bg-canvas", variant === "ghost" && "text-primary hover:bg-primary/5", variant === "ai" && "bg-marigold text-white hover:bg-[#d77d35]", className)} {...props} />; }

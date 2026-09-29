@@ -1,0 +1,1 @@
+export default function Loading() { return <div className="grid min-h-screen place-items-center bg-canvas"><div role="status" aria-live="polite" className="rounded-2xl border bg-white px-6 py-5 text-sm text-slate-600 shadow-soft">Loading BhashaClass…</div></div>; }
